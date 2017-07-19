@@ -1,0 +1,15 @@
+.navbar {
+	border-radius: 0 !important;
+}
+
+.list-group-item  {
+	height: 55px;
+}
+
+#new-task-text {
+	width: 80%;
+}
+
+.input-sm {
+	width: 60%;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>ToDo list</title>
+        <div th:replace="fragments :: header-links" />
+    </head> 
+    <body> 
+        <div th:replace="fragments :: header-navbar" />
+        
+		<div class="container">
+		    <div class="row">
+		        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+		        	<h1>Tasks</h1>
+		        
+		        	 <ul class="list-group" id="all-tasks">
+					  	<li th:each="task : ${tasks}" th:attr="data-id=${task.id}" class="task list-group-item">
+							<span class="title-text" th:text="${task.title}"></span>
+							<div class="pull-right">
+								<input class="btn btn-primary update-task" type="button" value="Update"/>
+								<input class="btn btn-danger delete-task" type="button" value="Delete"/>
+							</div>
+						</li>
+						<li id="new-task-list-item" class="list-group-item list-group-item-info">
+							<input id="new-task-text" class="form-control pull-left input-md" required="true" type="text" placeholder="Task description ..." />
+							<input id="add-task" class="btn btn-primary pull-right" type="button" value="Add new task" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
